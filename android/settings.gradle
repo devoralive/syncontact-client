@@ -1,0 +1,3 @@
+rootProject.name = 'syncontact'
+
+include ':app'
