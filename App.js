@@ -5,20 +5,10 @@
  */
 
 import React from 'react';
-import { Container, Content, Text } from 'native-base';
+import RootStack from './routes'
 
-import Navigation from './app/components/navigation'
-import ContactCard from './app/components/contact-card'
-
-const App = () => (
-  <Container>
-    <Navigation />
-
-    <Content>
-      <ContactCard />
-    </Content>
-  </Container>
-)
-
-export default App;
-
+export default class App extends React.Component {
+  render() {
+    return <RootStack />;
+  }
+}
