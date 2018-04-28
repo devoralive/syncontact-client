@@ -4,6 +4,10 @@ import { View, Button } from 'react-native';
 import { Container, Header, Content, List, ListItem, Text } from 'native-base';
 
 class ContactList extends React.Component {
+  static navigationOptions = {
+    title: 'Mes contacts',
+  };
+
   render() {
     return (
       <Container>

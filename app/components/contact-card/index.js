@@ -6,6 +6,10 @@ import FlexImage from 'react-native-flex-image';
 const { height, width} = Dimensions.get("window")
 
 class ContactCard extends React.Component {
+  static navigationOptions = {
+    title: 'Jérémy Berthelier',
+  };
+
   render() {
     return (
       <View 
