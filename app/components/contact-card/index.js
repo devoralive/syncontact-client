@@ -15,8 +15,13 @@ const users = [
 ]
 
 class ContactCard extends React.Component {
-  static navigationOptions = {
-    title: 'Jérémy Berthelier',
+  static navigationOptions = ({ navigation }) => {
+    const { params } = navigation.state;
+    const contact    = users.find((user) => user.id === params.id);
+    
+    return {
+      title: params ? contact.first_name + " " + contact.last_name : 'Contact',
+    }
   };
 
   render() {
