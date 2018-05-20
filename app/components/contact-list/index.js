@@ -38,8 +38,8 @@ class ContactList extends React.Component {
             {alpha.split("").map( (letter) => {
               let group = users.filter(filterBeginWith.bind(this, letter))
               return (
-                <View>
-                  <ListItem itemDivider key={letter}><Text>{letter.toUpperCase()}</Text></ListItem>
+                <View key={letter}>
+                  <ListItem itemDivider><Text>{letter.toUpperCase()}</Text></ListItem>
                   {group.map( (contact) => 
                     <ListItem key={contact.id}>
                       <Text

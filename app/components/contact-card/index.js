@@ -1,6 +1,6 @@
 import React from 'react'
-import { Image, View, Dimensions } from 'react-native'
-import { Container, Content, Text, H1, Button, Icon } from 'native-base';
+import { Image, View, Dimensions, StyleSheet } from 'react-native'
+import { Container, Content, Text, H1, Fab, Button, Icon } from 'native-base';
 import FlexImage from 'react-native-flex-image';
 
 const { height, width} = Dimensions.get("window")
@@ -15,6 +15,12 @@ const users = [
 ]
 
 class ContactCard extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+    };
+  }
+
   static navigationOptions = ({ navigation }) => {
     const { params } = navigation.state;
     const contact    = users.find((user) => user.id === params.id);
@@ -65,13 +71,19 @@ class ContactCard extends React.Component {
         >
           <H1>{contact.first_name} {contact.last_name}</H1>
           <Text>Travaille à : {contact.job_compagny}</Text>
-          <Text>{contact.job_title}</Text>
-          <Button 
-            rounded
-            success
-            style={{alignSelf:'center', marginTop: 10}}>
-            <Icon name='ios-call' />
-          </Button>
+          <Text>{contact.job_title}</Text>      
+          
+          <View style={{flex: 1, flexDirection: 'row'}}>
+            <Button success rounded style={{height: 52}}>
+              <Icon name='ios-call' style={{fontSize: 30}} />
+            </Button>
+
+            <Button primary rounded style={{height: 52}}>
+              <Icon name='message' type='MaterialIcons' style={{fontSize: 22}}/>
+            </Button>
+          </View>
+
+
         </View>
 
 
